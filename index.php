@@ -15,7 +15,7 @@ $messages = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 </head>
 <div class="container">
         <h1>Гостевая книга</h1>
-        <form method="POST">
+        <form method="POST" action="add.php">
             <?php if (isset($error)): ?>
                 <p class="error"><?= $error ?></p>
             <?php endif; ?>
@@ -24,6 +24,7 @@ $messages = $stmt -> fetchAll(PDO::FETCH_ASSOC);
             <button type="submit">Отправить</button>
         </form>
 
+  
         <hr>
         <h3>Сообщения (<?= count($messages) ?>):</h3>
         <?php if (empty($messages)): ?>
@@ -35,6 +36,11 @@ $messages = $stmt -> fetchAll(PDO::FETCH_ASSOC);
                     <div><?= htmlspecialchars($msg['message']) ?></div>
                     <div class="date"> <?= $msg['created_at'] ?></div>
                 </div>
+                <a href="delete.php?id=<?= $msg['id'] ?>" 
+                    onclick="return confirm('Вы уверены, что хотите удалить это сообщение?')"
+                    style="color: red; margin-left: 15px; text-decoration: none;">
+                    Удалить
+                </a>
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
