@@ -24,6 +24,10 @@ $messages = $stmt -> fetchAll(PDO::FETCH_ASSOC);
             <button type="submit">Отправить</button>
         </form>
 
+        <form action="edit.php" method="GET" style="display: inline;">
+            <input type="hidden" name="id" value="<?= $msg['id'] ?>">
+            <button type="submit" class="btn btn-edit">Редактировать</button>
+        </form>
   
         <hr>
         <h3>Сообщения (<?= count($messages) ?>):</h3>

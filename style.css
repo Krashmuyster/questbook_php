@@ -6,9 +6,9 @@ body { font-family: Arial; margin: 40px; background: #f0f0f0; }
         input, textarea { width: 97%; padding: 8px; margin: 5px 0px 15px; }
         button { padding: 10px 20px; background: #007BFF; color: white; border: none; cursor: pointer; }
         button:hover { background: #0854aaff; }
-        .error { color: red; 
+        .error { color: red; }
 .message{
     color: purple; 
     margin-left: 15px; 
-    text-decoration: none;">
+    text-decoration: none;
 }
