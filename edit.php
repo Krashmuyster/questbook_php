@@ -25,7 +25,7 @@ if (!$message) {
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>✏️ Редактировать сообщение</title>
+    <title> Редактировать сообщение</title>
     <style>
         body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 30px; }
         .container {

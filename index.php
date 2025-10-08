@@ -23,11 +23,6 @@ $messages = $stmt -> fetchAll(PDO::FETCH_ASSOC);
             <textarea name="message" rows="4" placeholder="Ваше сообщение" required></textarea>
             <button type="submit">Отправить</button>
         </form>
-
-        <form action="edit.php" method="GET" style="display: inline;">
-            <input type="hidden" name="id" value="<?= $msg['id'] ?>">
-            <button type="submit" class="btn btn-edit">Редактировать</button>
-        </form>
   
         <hr>
         <h3>Сообщения (<?= count($messages) ?>):</h3>
@@ -40,11 +35,17 @@ $messages = $stmt -> fetchAll(PDO::FETCH_ASSOC);
                     <div><?= htmlspecialchars($msg['message']) ?></div>
                     <div class="date"> <?= $msg['created_at'] ?></div>
                 </div>
+                
                 <a href="delete.php?id=<?= $msg['id'] ?>" 
                     onclick="return confirm('Вы уверены, что хотите удалить это сообщение?')"
                     style="color: red; margin-left: 15px; text-decoration: none;">
                     Удалить
                 </a>
+
+                <form action="edit.php" method="GET" style="display: inline;">
+                    <input type="hidden" name="id" value="<?= $msg['id'] ?>">
+                    <button type="submit" class="btn btn-edit">Редактировать</button>
+                </form>
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
